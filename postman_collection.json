@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "5111915b-6837-4265-b026-5af8a913e309",
+		"name": "Node demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25748693"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/auth/login",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change pass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxNjAzNDU3OH0.Oe5w4VGD6-1uGrnTOXMuH9-ZYYoF6PSWYwFysRhtDsw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\": \"12345678\",\r\n    \"newPassword\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/auth/changePassword",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"auth",
+						"changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get customer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxNjAzOTI0M30.zspbS9rjNnTAW_FEMaV8ZKIUG01U9XNSpxCX7FoNBtY"
+					}
+				],
+				"url": {
+					"raw": "{{local}}/customer/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxNjAzNjQxNH0.ItRb8MoEojTTi_ofRW3_l-YOpbIK8mnPg0RcV3eBw1o"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Manan\",\r\n    \"mobileNumber\": 9586056000,\r\n    \"birthDate\": \"08-09-2002\",\r\n    \"gender\": 1,\r\n    \"addressDetails\": [\r\n        {\r\n            \"address\": \"add 1\",\r\n            \"landmark\": \"\",\r\n            \"pincode\": 394101\r\n        },\r\n        {\r\n            \"address\": \"add 1\",\r\n            \"landmark\": \"\",\r\n            \"pincode\": \"395006\"\r\n        },\r\n        {\r\n            \"address\": \"add 1\",\r\n            \"landmark\": \"\",\r\n            \"pincode\": 999999\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/customer",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update customer",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTcxNjAzOTI0M30.zspbS9rjNnTAW_FEMaV8ZKIUG01U9XNSpxCX7FoNBtY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Manan\",\r\n    \"gender\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/customer/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
